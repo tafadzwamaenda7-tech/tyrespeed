@@ -12,7 +12,7 @@ npm run dev
 Open `http://localhost:3000`. Node 20.9 or newer is required.
 
 ```bash
-npm run build       # production build (output: .next-build/)
+npm run build       # production build (output: .next-build/ locally, .next/ on Vercel)
 npm run start       # serve the production build
 npm run lint        # ESLint
 npm run typecheck   # TypeScript, no emit
