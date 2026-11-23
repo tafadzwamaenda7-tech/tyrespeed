@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
+import { SiteLogo } from "@/components/layout/site-logo";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -10,8 +11,8 @@ export function SiteFooter() {
       <div className="wrap">
         <div className="footer-grid">
           <div className="footer-brand" data-reveal>
-            <Link href="/" className="wordmark" aria-label="tyrespeed home">
-              tyrespeed
+            <Link href="/" className="brand-link" aria-label="tyrespeed home">
+              <SiteLogo />
             </Link>
             <p className="footer-position">
               Tyre fitting, balancing and wheel alignment in Eastlea, Harare.

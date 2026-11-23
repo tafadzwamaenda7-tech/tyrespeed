@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Search, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { useApp } from "@/components/providers/app-provider";
+import { SiteLogo } from "@/components/layout/site-logo";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -78,8 +79,8 @@ export function SiteHeader() {
     <>
       <header className="main-nav">
         <div className="wrap">
-          <Link href="/" className="wordmark" aria-label="tyrespeed home">
-            tyrespeed
+          <Link href="/" className="brand-link" aria-label="tyrespeed home">
+            <SiteLogo priority />
           </Link>
 
           <nav className="nav-links" aria-label="Main navigation">
@@ -141,7 +142,7 @@ export function SiteHeader() {
           ref={sheetRef}
         >
           <div className="menu-sheet-head">
-            <span className="wordmark">tyrespeed</span>
+            <SiteLogo />
             <div className="menu-head-actions">
               <button
                 type="button"

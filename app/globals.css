@@ -349,15 +349,18 @@ img {
   gap: var(--sp-4);
 }
 
-.wordmark {
+.brand-link {
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-display);
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1;
-  white-space: nowrap;
+}
+
+/* The supplied lockup is light-on-transparent, so it is rendered as a clean
+   ink mark on the light canvas instead of disappearing into it. */
+.site-logo {
+  display: block;
+  width: 104px;
+  height: auto;
+  filter: brightness(0);
 }
 
 .nav-links {
@@ -528,8 +531,8 @@ kbd {
   background: var(--canvas);
 }
 
-.menu-sheet-head .wordmark {
-  font-size: 34px;
+.menu-sheet-head .site-logo {
+  width: 104px;
 }
 
 .menu-head-actions {
@@ -2618,8 +2621,8 @@ label.field-label {
   gap: var(--sp-8);
 }
 
-.footer-brand .wordmark {
-  font-size: 56px;
+.footer-brand .site-logo {
+  width: 180px;
 }
 
 .footer-position {
@@ -3040,8 +3043,8 @@ label.field-label {
     grid-column: auto;
   }
 
-  .footer-brand .wordmark {
-    font-size: 52px;
+  .footer-brand .site-logo {
+    width: 150px;
   }
 
   .footer-legal {
