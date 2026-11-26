@@ -3,23 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { AlignmentDiagram } from "@/components/schematics/alignment-diagram";
 import { ServiceTable } from "@/components/services/service-table";
-import { usd } from "@/lib/format";
 import { serviceCategories, services } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Service records with the symptom, procedure, measured checks, workshop time and starting price.",
+  description: "Service records with the symptom, procedure, measured checks and workshop time.",
   alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
   const categories = serviceCategories.filter((category) => category !== "All");
   const durations = services.map((service) => service.durationMin);
-  const prices = services.map((service) => service.priceFrom);
   const minDuration = Math.min(...durations);
   const maxDuration = Math.max(...durations);
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
 
   return (
     <div className="wrap page">
@@ -67,10 +63,6 @@ export default function ServicesPage() {
             <div className="fact-row">
               <span>Workshop time</span>
               <span className="fact-value data">{minDuration} to {maxDuration} min</span>
-            </div>
-            <div className="fact-row">
-              <span>Indicative starting prices</span>
-              <span className="fact-value data">{usd(minPrice)} to {usd(maxPrice)}</span>
             </div>
           </div>
         </div>

@@ -1526,6 +1526,81 @@ label.field-label {
   flex: 1;
 }
 
+/* Service index cards */
+.service-index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-4);
+  padding-block: var(--sp-5);
+}
+
+.service-index-grid > li {
+  display: flex;
+  min-width: 0;
+}
+
+.service-index-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 160ms ease;
+}
+
+.service-index-card:hover {
+  border-color: var(--ink);
+}
+
+.service-index-category {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.service-index-title {
+  margin-top: var(--sp-2);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.service-index-title a:hover {
+  color: var(--accent-text);
+}
+
+.service-index-symptom {
+  margin-top: var(--sp-3);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.service-index-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-top: auto;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--line);
+}
+
+.service-index-time {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 /* Arrival rows and brand list */
 .arrival-rows {
   margin-top: var(--sp-7);
@@ -2819,7 +2894,8 @@ label.field-label {
     gap: var(--sp-5);
   }
 
-  .category-rail {
+  .category-rail,
+  .service-index-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2925,8 +3001,17 @@ label.field-label {
     border-bottom: 1px solid var(--line);
   }
 
-  .service-cards {
+  .service-cards,
+  .service-index-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-index-card-foot {
+    flex-wrap: wrap;
+  }
+
+  .service-index-card-foot .btn {
+    flex: 1;
   }
 
   .slots-strip {
@@ -3192,8 +3277,8 @@ label.field-label {
 }
 
 @keyframes menu-link-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
+  from { transform: translateY(10px); }
+  to { transform: none; }
 }
 
 @keyframes toast-in {
@@ -3364,12 +3449,6 @@ html.has-reveal .tyre-card[data-reveal].is-revealed .tyre-card-media img {
 .menu-layer.is-open .menu-nav-link {
   animation: menu-link-in 260ms var(--ease-motion) both;
 }
-
-.menu-layer.is-open .menu-nav-link:nth-child(2) { animation-delay: 60ms; }
-.menu-layer.is-open .menu-nav-link:nth-child(3) { animation-delay: 120ms; }
-.menu-layer.is-open .menu-nav-link:nth-child(4) { animation-delay: 180ms; }
-.menu-layer.is-open .menu-nav-link:nth-child(5) { animation-delay: 240ms; }
-.menu-layer.is-open .menu-nav-link:nth-child(6) { animation-delay: 300ms; }
 
 .faq-answer {
   animation: drop-in 200ms var(--ease-motion) both;

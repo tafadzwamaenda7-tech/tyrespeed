@@ -2,7 +2,7 @@ import type { TyreSku, Vehicle } from "@/lib/types";
 
 /** Sample catalogue. No price, stock count or fitment suggestion is a guarantee. */
 export const indicativeNotice =
-  "Prices, availability and fitment suggestions are indicative. The workshop confirms stock, fitment and the final price before work starts.";
+  "Availability and fitment suggestions are indicative. The workshop confirms stock, fitment and the final cost before work starts.";
 
 export const inventory: TyreSku[] = [
   {

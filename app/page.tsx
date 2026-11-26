@@ -8,7 +8,6 @@ import { FaqList } from "@/components/faq/faq-list";
 import { QuoteReviewButton } from "@/components/utilities/quote-review-button";
 import { bookedSlots } from "@/lib/booked-slots";
 import { generateSlots } from "@/lib/bookings";
-import { usd } from "@/lib/format";
 import { inventory, tyreBrands } from "@/lib/inventory";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
@@ -140,7 +139,6 @@ export default async function HomePage() {
                     </h3>
                     <div className="service-card-meta">
                       <span className="service-card-duration">{service.durationMin} min</span>
-                      <span className="service-card-price">indicative from {usd(service.priceFrom)}</span>
                     </div>
                   </div>
                   <Link href={`/book?service=${service.slug}`} className="btn btn-accent">

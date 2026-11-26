@@ -37,7 +37,7 @@ export const services: Service[] = [
       {
         question: "Is balancing included?",
         answer:
-          "No. It is a separate line at USD$10 per wheel so you can see it on the invoice.",
+          "No. It is a separate line on the invoice so you can see it clearly.",
       },
     ],
   },

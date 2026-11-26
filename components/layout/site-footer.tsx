@@ -12,7 +12,7 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div className="footer-brand" data-reveal>
             <Link href="/" className="brand-link" aria-label="tyrespeed home">
-              <SiteLogo />
+              <SiteLogo sizes="180px" />
             </Link>
             <p className="footer-position">
               Tyre fitting, balancing and wheel alignment in Eastlea, Harare.

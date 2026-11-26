@@ -24,8 +24,8 @@ export default async function TyresPage({ searchParams }: Params) {
         <h1>Tyre catalogue</h1>
         <div className="page-head-aside">
           <p className="lede">
-            Search by size, vehicle or pattern. Prices and fitment suggestions are indicative, and the workshop
-            confirms stock, fitment and the final price before work starts.
+            Search by size, vehicle or pattern. Sizes and fitment suggestions are indicative, and the workshop
+            confirms stock, fitment and the final cost before work starts.
           </p>
           <div className="page-head-actions">
             <QuoteReviewButton large />

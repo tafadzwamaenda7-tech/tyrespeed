@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AlignmentDiagram } from "@/components/schematics/alignment-diagram";
 import { AddServiceButton } from "@/components/services/add-service-button";
-import { usd } from "@/lib/format";
 import { getService, services } from "@/lib/services";
 
 const serviceImages: Record<string, { src: string; alt: string }> = {
@@ -58,7 +57,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="row chip-row">
           <span className="chip">{service.category}</span>
           <span className="chip data">{service.durationMin} min</span>
-          <span className="chip data">indicative from {usd(service.priceFrom)}</span>
         </div>
       </header>
 
@@ -101,7 +99,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <section className="rail-block" aria-labelledby="service-facts-heading">
             <h2 id="service-facts-heading">At the workshop</h2>
             <div className="status-item"><span className="muted">Duration</span><span className="status-value">{service.durationMin} min</span></div>
-            <div className="status-item"><span className="muted">Indicative price</span><span className="status-value">{usd(service.priceFrom)}</span></div>
             <div className="status-item"><span className="muted">Category</span><span className="status-value">{service.category}</span></div>
           </section>
 

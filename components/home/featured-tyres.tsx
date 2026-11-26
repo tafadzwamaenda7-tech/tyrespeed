@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/components/providers/app-provider";
-import { usd } from "@/lib/format";
 import { inventory } from "@/lib/inventory";
 
 const featuredSkus = [
@@ -41,9 +40,6 @@ export function FeaturedTyres() {
               <p className="tyre-card-name">{item.brand} {item.pattern}</p>
               <p className="tyre-card-fits">Suggested for {item.fits}</p>
               <p className="tyre-card-stock" data-level="check">Confirm with workshop</p>
-              <p className="tyre-card-price">
-                {usd(item.price)} <span className="tiny muted">indicative</span>
-              </p>
               <button
                 type="button"
                 className="btn btn-outline"

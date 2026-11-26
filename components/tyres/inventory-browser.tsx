@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/components/providers/app-provider";
-import { usd } from "@/lib/format";
 import {
   indicativeNotice,
   inventory,
@@ -174,7 +173,7 @@ export function InventoryBrowser({
         {rows.length === 0 ? (
           <div className="catalogue-empty">
             <p>
-              No catalogue entries match {activeFilterDescription}. Prices and availability are indicative, so the
+              No catalogue entries match {activeFilterDescription}. Availability and fitment are indicative, so the
               workshop can suggest alternatives when you call or send the quote.
             </p>
             <button type="button" className="btn btn-outline" onClick={clearFilters}>Clear filters</button>
@@ -201,9 +200,6 @@ export function InventoryBrowser({
                     <p className="tyre-card-fits">Suggested for {item.fits}</p>
                     <p className="tyre-card-rating">Load and speed index {item.loadSpeed}</p>
                     <p className="tyre-card-stock" data-level={stock.level}>{stock.text}</p>
-                    <p className="tyre-card-price">
-                      {usd(item.price)} <span className="tiny muted">indicative</span>
-                    </p>
                     <button
                       type="button"
                       className="btn btn-outline"
@@ -226,7 +222,6 @@ export function InventoryBrowser({
                   <th scope="col">Size</th>
                   <th scope="col">Pattern</th>
                   <th scope="col">Suggested for</th>
-                  <th scope="col" className="num">Indicative price</th>
                   <th scope="col">Availability</th>
                   <th scope="col"><span className="sr-only">Add to quote</span></th>
                 </tr>
@@ -250,7 +245,6 @@ export function InventoryBrowser({
                       <td data-label="Size"><span className="cell-title">{item.size}</span><span className="cell-sub">{item.loadSpeed}</span></td>
                       <td data-label="Pattern"><span>{item.brand}</span><span className="cell-sub">{item.pattern}</span></td>
                       <td data-label="Suggested for" className="muted">{item.fits}</td>
-                      <td data-label="Indicative price" className="num">{usd(item.price)}</td>
                       <td data-label="Availability"><span className="stock" data-level={stock.level}>{stock.text}</span></td>
                       <td data-label="">
                         <button
